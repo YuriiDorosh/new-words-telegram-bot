@@ -1,6 +1,10 @@
 ### dotenv ###
 .env
 
+### DB ###
+
+words.db
+
 ### Node ###
 # Logs
 logs
