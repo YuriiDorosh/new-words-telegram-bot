@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "node-telegram-bot-api": "^0.61.0",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "telegraf": "^4.12.2"
   }
 }
