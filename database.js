@@ -33,6 +33,15 @@ class Database {
             });
         });
     }
+
+    deleteWord(user_id, word) {
+        return new Promise((resolve, reject) => {
+            this.db.run(`DELETE FROM words WHERE user_id = ? AND word = ?`, [user_id, word], (err) => {
+                if (err) reject(err);
+                else resolve(true);
+            });
+        });
+    }
 }
 
 const dbInstance = new Database();
