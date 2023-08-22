@@ -42,6 +42,16 @@ class Database {
             });
         });
     }
+
+    getRandomWord(user_id) {
+        return new Promise((resolve, reject) => {
+            this.db.get(`SELECT word, translation FROM words WHERE user_id = ? ORDER BY RANDOM() LIMIT 1`, [user_id], (err, row) => {
+                if (err) reject(err);
+                else resolve(row);
+            });
+        });
+    }
+    
 }
 
 const dbInstance = new Database();
