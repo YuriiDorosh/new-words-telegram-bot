@@ -2,7 +2,8 @@ const sqlite3 = require('sqlite3').verbose();
 
 class Database {
     constructor() {
-        this.db = new sqlite3.Database('./words.db', (err) => {
+        // this.db = new sqlite3.Database('./words.db', (err) => {
+        this.db = new sqlite3.Database('./usr/src/app/data/words.db', (err) => {
             if (err) {
                 console.error('Error connecting to the database: ', err);
             } else {
