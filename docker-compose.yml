@@ -3,6 +3,7 @@ version: '3'
 services:
   bot:
     build: .
+    restart: always
     volumes:
       - ./dbdata:/usr/src/app/data
     environment:
