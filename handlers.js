@@ -60,9 +60,26 @@ const deleteWordHandler = (ctx) => {
         });
 };
 
+const getRandomWordHandler = (ctx) => {
+    const chatId = ctx.chat.id;
+
+    db.getRandomWord(chatId).then((word) => {
+        if (!word) {
+            ctx.reply('Your dictionary is empty.');
+            return;
+        }
+
+        ctx.reply(`${word.word} - ${word.translation}`);
+    }).catch((err) => {
+        console.error(err);
+        ctx.reply('There was an error fetching a random word.');
+    });
+};
+
 
 module.exports = {
     addWordHandler,
     getWordsHandler,
-    deleteWordHandler
+    deleteWordHandler,
+    getRandomWordHandler
 };
