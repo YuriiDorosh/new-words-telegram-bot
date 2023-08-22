@@ -1,5 +1,12 @@
 const { Telegraf } = require('telegraf');
-const { addWordHandler, getWordsHandler, deleteWordHandler,getRandomWordHandler, helpHandler } = require('./handlers');
+const { 
+    addWordHandler, 
+    getWordsHandler, 
+    deleteWordHandler,
+    getRandomWordHandler, 
+    helpHandler, 
+    deleteAllWordsHandler 
+} = require('./handlers');
 const { initializeDatabase } = require('./database');
 
 require('dotenv').config();
@@ -28,6 +35,7 @@ Let's get started! Try adding your first word using /addword.
 bot.command('help', helpHandler);
 bot.hears(/\/add_word (.+)/, (ctx) => addWordHandler(ctx));
 bot.hears(/\/delete_word (.+)/, (ctx) => deleteWordHandler(ctx));
+bot.command('delete_all', deleteAllWordsHandler);
 bot.command('show_words', (ctx) => getWordsHandler(ctx, bot));
 bot.command('random_word', (ctx) => getRandomWordHandler(ctx));
 
