@@ -6,8 +6,8 @@ Welcome to the Words Bot!
 
 Here are the commands you can use:
 
-/addword <word>-<translation> - Add a word and its translation to your dictionary.
-/showwords - View all the words in your dictionary.
+/add_word <word>-<translation> - Add a word and its translation to your dictionary.
+/show_words - View all the words in your dictionary.
 /delete_word <word> - Delete a specific word from your dictionary.
 /random_word - Get a random word and its translation from your dictionary.
 /help - Display this help message.
