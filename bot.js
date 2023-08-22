@@ -24,6 +24,7 @@ This bot will help you manage your personal word dictionary. Here's what you can
 /add_word <word>-<translation> - Add a word and its translation.
 /show_words - View all the words in your dictionary.
 /delete_word <word> - Delete a specific word.
+/delete_all - Delete all words.
 /random_word - Get a random word and its translation.
 /help - See this list of commands anytime you need.
 
