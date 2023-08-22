@@ -43,7 +43,26 @@ const getWordsHandler = (ctx, bot) => {
     });
 };
 
+const deleteWordHandler = (ctx) => {
+    const wordToDelete = ctx.match[1];
+    if (!wordToDelete) {
+        ctx.reply('Please provide a word to delete.');
+        return;
+    }
+
+    db.deleteWord(ctx.chat.id, wordToDelete)
+        .then(() => {
+            ctx.reply(`Deleted: ${wordToDelete}`);
+        })
+        .catch((err) => {
+            console.error(err);
+            ctx.reply('There was an error deleting the word.');
+        });
+};
+
+
 module.exports = {
     addWordHandler,
-    getWordsHandler
+    getWordsHandler,
+    deleteWordHandler
 };
