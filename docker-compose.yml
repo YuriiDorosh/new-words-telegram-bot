@@ -7,7 +7,7 @@ services:
     volumes:
       - ./dbdata:/usr/src/app/data
     environment:
-      - TELEGRAM_BOT_TOKEN=your_bot_token
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     depends_on:
       - sqlite-db
 
