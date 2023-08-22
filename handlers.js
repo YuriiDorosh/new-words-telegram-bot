@@ -80,6 +80,17 @@ const deleteWordHandler = (ctx) => {
         });
 };
 
+const deleteAllWordsHandler = (ctx) => {
+    db.deleteAllWords(ctx.chat.id)
+        .then(() => {
+            ctx.reply('All words from your dictionary have been deleted.');
+        })
+        .catch((err) => {
+            console.error(err);
+            ctx.reply('There was an error deleting all words.');
+        });
+};
+
 const getRandomWordHandler = (ctx) => {
     const chatId = ctx.chat.id;
 
@@ -101,6 +112,7 @@ module.exports = {
     addWordHandler,
     getWordsHandler,
     deleteWordHandler,
+    deleteAllWordsHandler,
     getRandomWordHandler,
     helpHandler
 };
