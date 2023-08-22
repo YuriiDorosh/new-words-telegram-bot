@@ -1,5 +1,5 @@
 const { Telegraf } = require('telegraf');
-const { addWordHandler, getWordsHandler, deleteWordHandler } = require('./handlers');
+const { addWordHandler, getWordsHandler, deleteWordHandler,getRandomWordHandler } = require('./handlers');
 const { initializeDatabase } = require('./database');
 
 require('dotenv').config();
@@ -12,5 +12,6 @@ bot.start(ctx => ctx.reply('Welcome! Use /addword to add a word and /showwords t
 bot.hears(/\/addword (.+)/, (ctx) => addWordHandler(ctx));
 bot.hears(/\/delete_word (.+)/, (ctx) => deleteWordHandler(ctx));
 bot.command('showwords', (ctx) => getWordsHandler(ctx, bot));
+bot.command('random_word', (ctx) => getRandomWordHandler(ctx));
 
 bot.launch();
