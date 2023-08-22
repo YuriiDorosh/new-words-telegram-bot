@@ -1,5 +1,25 @@
 const { db } = require('./database');
 
+const helpHandler = (ctx) => {
+    const helpMessage = `
+Welcome to the Words Bot!
+
+Here are the commands you can use:
+
+/addword <word>-<translation> - Add a word and its translation to your dictionary.
+/showwords - View all the words in your dictionary.
+/delete_word <word> - Delete a specific word from your dictionary.
+/random_word - Get a random word and its translation from your dictionary.
+/help - Display this help message.
+
+Example usage:
+/addword hello-привіт
+/delete_word hello
+`;
+
+    ctx.reply(helpMessage);
+};
+
 const addWordHandler = (ctx) => {
     const input = ctx.match[1];
     if (!input) {
@@ -81,5 +101,6 @@ module.exports = {
     addWordHandler,
     getWordsHandler,
     deleteWordHandler,
-    getRandomWordHandler
+    getRandomWordHandler,
+    helpHandler
 };
